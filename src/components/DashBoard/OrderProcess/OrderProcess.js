@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import PaymentProcess from '../PymentProcess/PaymentProcess';
 import SideBar from '../SideBar/SideBar';
@@ -6,21 +6,36 @@ import CreditCard from '../../../images/credit-card.png';
 import PayPal from '../../../images/paypal.png';
 // import SplitForm from '../SplitForm/SplitForm';
 import './OrderProcess.css';
+import { UserContext } from '../../../App';
 
-const OrderProcess = () => {
+const OrderProcess = ({userOrder, setUserOrder}) => {
+    const [logInUser, setLogInUser] = useContext(UserContext);
     const { register, handleSubmit,formState: { errors } } = useForm();
-    const onSubmit = data => {
-        
+    const {orderName} = userOrder;
+    
+    const onSubmit = async data => {
+        await handleClick(data);
+        console.log(data);
+        console.log(userOrder);
+
         fetch("http://localhost:5055/addOrder",{
             method:"POST",
             headers:{"content-type":"application/json"},
-            body:JSON.stringify(data)
+            body:JSON.stringify(userOrder)
         })
         .then(res => res.json())
         .then(success =>{
             alert('successfully submitted');
         })
     };
+
+    const handleClick = async data => {
+        const newOrder = {...userOrder}
+        newOrder.name = logInUser.displayName || data.name;
+        newOrder.email = logInUser.email || data.email;
+        newOrder.description = userOrder.orderName || data.serviceTitle;
+        await setUserOrder(newOrder);
+    }
     return (
         <section>
             <div className="container">
@@ -32,15 +47,15 @@ const OrderProcess = () => {
                         <h4 className="brand-txt mt-5">Book Service</h4>
                         <div>
                             <form className="buyProcess-form row"onSubmit={handleSubmit(onSubmit)}>
-                                <input name='name' {...register("name", { required: true })} placeholder="Enter Name"/>
+                                <input name='name' disabled defaultValue={logInUser.displayName} {...register("name", { required: false })} placeholder="Enter Name"/>
                                 {errors.serviceTitle && <p className="error">Title is required</p>}<br />
 
-                                <input name='email' {...register("email", { required: true })} placeholder="Enter E-mail"/>
+                                <input name='email' disabled defaultValue={logInUser.email} {...register("email", { required: false })} placeholder="Enter E-mail"/>
                                 {errors.serviceTitle && <p className="error">Title is required</p>}<br />
 
-                                <input name='serviceTitle' {...register("serviceTitle", { required: true })} placeholder="Enter Title"/>
+                                <input name='serviceTitle' disabled defaultValue={orderName} {...register("serviceTitle", { required: false })} placeholder="Enter Service Title"/>
                                 {errors.serviceTitle && <p className="error">Title is required</p>}<br/>
-                                <input type="submit" className="fw-bold text-white text-uppercase" />
+                                <input type="submit" onClick={handleClick} className="fw-bold text-white text-uppercase" />
                             </form> 
                         </div>
                         <div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ServicesDetails from '../ServicesDetails/ServicesDetails';
 
-const AllServices = () => {
+const AllServices = ({userOrder, setUserOrder}) => {
     const [services, setServices] = useState([]);
     useEffect(()=>{
         fetch('http://localhost:5055/servicebook')
@@ -20,7 +20,11 @@ const AllServices = () => {
            </div>
             <div className="row">
                {
-                   services.map(service =><ServicesDetails service={service}></ServicesDetails>)
+                    services.map(service =><ServicesDetails
+                        service={service}
+                        userOrder={userOrder}
+                        setUserOrder={setUserOrder}
+                    ></ServicesDetails>)
                }
             </div>
         </div>

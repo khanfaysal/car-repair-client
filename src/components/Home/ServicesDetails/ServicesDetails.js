@@ -1,13 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 // import CarEngine from '../../../images/car-cleaning.jpg';
 
-const ServicesDetails = ({ service }) => {
-  const [logInUser, setLogInUser] = useState({});
-  const handleBooking = () =>{
-    const SpecificOrder = {...logInUser};
-    fetch('http://localhost:5055/')
-
+const ServicesDetails = ({ service, userOrder, setUserOrder }) => {
+  const {serviceTitle, imageUpload, price, textArea} = service;
+  const customerOrder = {
+    name: '',
+    email: '',
+    status: 'Pending',
+    orderName: serviceTitle,
+    image: imageUpload,
+    price: price,
+    description: textArea,
+  }
+  const handleClick = () => {
+    setUserOrder(customerOrder);
   }
   return (
           <div className="col-md-4">
@@ -17,7 +24,7 @@ const ServicesDetails = ({ service }) => {
                 <h6 className="card-title">{service.serviceTitle}</h6>
                 <h4 className="card-title text-danger">${service.price}</h4>
                 <p className="card-text">{service.textArea}</p>
-                <Link to="/order"><button onClick={handleBooking} className="brand-btn">Order Service</button></Link>
+                <Link to="/order"><button onClick={handleClick} className="brand-btn">Order Service</button></Link>
               </div>
             </div>
        </div>

@@ -7,12 +7,12 @@ import Header from '../Header/Header';
 // import ServicesDetails from '../ServicesDetails/ServicesDetails';
 import Testimonials from '../Testimonials/Testimonials';
 
-const Home = () => {
+const Home = ({userOrder, setUserOrder}) => {
     return (
         <div>
             <Header></Header>
             <CustomerCounter></CustomerCounter>
-            <AllServices></AllServices>
+            <AllServices userOrder={userOrder} setUserOrder={setUserOrder}></AllServices>
             {/* <ServicesDetails></ServicesDetails> */}
             <Testimonials></Testimonials>
             <CustomerForm></CustomerForm>
