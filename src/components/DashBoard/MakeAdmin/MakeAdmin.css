@@ -1,0 +1,20 @@
+
+.makeadmin-form input{
+    margin-top: 30px;
+    padding: 5px;
+    border: none;
+    border-bottom: 2px solid #0b2154;
+    width:400px;
+}
+.makeadmin-form input:focus{
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #0b2154;
+}
+input[type=submit] {
+    background-color: red;
+    width: 100px;
+}
+.error{
+    color: #d81324;
+}

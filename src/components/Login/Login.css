@@ -1,0 +1,15 @@
+.loginBoxOuter{
+    display: flex;
+    position:'absolute';
+    margin-top: 100px;
+    align-items: center;
+    justify-content: center;
+}
+.loginBoxOuter .loginBoxInner{
+    position:'relative';
+    /* height: 100px; */
+    width: 800px;
+    margin-top: 20px;
+    color: rgba(0,0,0,0.1);
+    
+}

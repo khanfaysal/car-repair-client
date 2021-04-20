@@ -1,0 +1,22 @@
+
+.main-content{
+    margin-left:240px;
+}
+header{
+    display:flex;
+    justify-content:space-between;
+    padding: 1rem;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    position: fixed;
+    width:calc(100%-240px);
+   
+    top: 0;
+
+}
+.user-wrapper{
+    display:flex;
+    align-items:center;
+}
+.user-wrapper small{
+    display:inline-block;
+}

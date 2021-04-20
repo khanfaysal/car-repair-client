@@ -1,0 +1,33 @@
+
+.userFeedback-form input{
+    margin-top: 30px;
+    padding: 5px;
+    border: none;
+    border-bottom: 2px solid #0b2154;
+}
+.userFeedback-form input:focus{
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #0b2154;
+}
+.userFeedback-form textarea{
+    display:block;
+    margin-top: 30px;
+    padding: 5px;
+    width: 70%;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid red;
+}
+.userFeedback-form textarea:focus{
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #0b2154;
+}
+input[type=submit] {
+    background-color: red;
+    width: 150px;
+}
+.error{
+    color: #d81324;
+}
