@@ -1,9 +1,8 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import './App.css';
 import Home from './components/Home/Home/Home';
@@ -11,19 +10,27 @@ import DashBoard from "./components/DashBoard/DashBoard";
 import Login from './components/Login/Login';
 import PrivateRoute from './components/Home/PrivateRoute/PrivateRoute';
 import AddServices from './components/DashBoard/AddServices/AddServices';
-// import ServicesDetails from "./components/Home/ServicesDetails/ServicesDetails";
 import MakeAdmin from "./components/DashBoard/MakeAdmin/MakeAdmin";
 import OrderProcess from "./components/DashBoard/OrderProcess/OrderProcess";
 import OrderListAdmin from "./components/DashBoard/OrderListAdmin/OrderListAdmin";
 import ManageService from "./components/DashBoard/ManageService/ManageService";
 import Review from './components/DashBoard/Review/Review';
+import ServiceOrder from "./components/DashBoard/ServiceOrder/ServiceOrder";
 
 
 export const UserContext = createContext()
-
 function App() {
   const [logInUser, setLogInUser] = useState({});
   const [userOrder, setUserOrder] = useState({});
+
+    const [adminData, setAdminData] = useState(null);
+
+    useEffect(() => {
+        const rawEmail = logInUser.email;
+        fetch('http://localhost:5055/admin?email='+rawEmail)
+        .then(res => res.json())
+        .then(data => setAdminData(data))
+    }, [logInUser.email]);
   return (
     <UserContext.Provider  value = {[logInUser, setLogInUser]}>
      <Router>
@@ -40,27 +47,45 @@ function App() {
           <DashBoard></DashBoard>
         </PrivateRoute>
 
-        <Route path="/addservices">
-          <AddServices></AddServices>
-        </Route>
+       {
+         adminData && (
+          <Route path="/addservices">
+           <AddServices></AddServices>
+         </Route>
+         )
+       }
 
-        <Route path="/orderlist">
-          <OrderListAdmin></OrderListAdmin>
-        </Route>
+        {
+          adminData && (
+            <Route path="/orderlist">
+              <OrderListAdmin></OrderListAdmin>
+            </Route>
+          )
+        }
 
-        <Route path="/makeadmin">
-          <MakeAdmin></MakeAdmin>
-        </Route>
+        {
+          adminData && (
+            <Route path="/makeadmin">
+              <MakeAdmin></MakeAdmin>
+            </Route>
+          )
+        }
 
-        <Route path="/manageservice">
-          <ManageService></ManageService>
-        </Route>
+        {
+          adminData && (
+            <Route path="/manageservice">
+              <ManageService></ManageService>
+           </Route>
+          )
+        }
 
         <Route path="/order">
           <OrderProcess userOrder={userOrder} setUserOrder={setUserOrder}></OrderProcess>
         </Route>
 
-       
+        <Route path="/customerorder">
+          <ServiceOrder></ServiceOrder>
+        </Route>
 
         <Route path="/review">
           <Review></Review>
@@ -72,14 +97,10 @@ function App() {
         
         <Route path="*">
           <Login></Login>
-        </Route>
-
-        {/* check router */}
-        
+        </Route> 
       </Switch>
     </Router> 
     </UserContext.Provider>
-    
   );
 }
 

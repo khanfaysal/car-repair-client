@@ -13,6 +13,7 @@ const ServicesDetails = ({ service, userOrder, setUserOrder }) => {
     price: price,
     description: textArea,
   }
+  console.log(service);
   const handleClick = () => {
     setUserOrder(customerOrder);
   }

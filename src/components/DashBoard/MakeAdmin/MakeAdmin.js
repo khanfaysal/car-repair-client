@@ -1,11 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from "react-hook-form";
 import SideBar from '../SideBar/SideBar';
 import './MakeAdmin.css';
 
 const MakeAdmin = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const { register, handleSubmit } = useForm();
+
+  const onSubmit = data => {
+    const adminData = {
+      adminEmail: data.email
+    }
+    const serverURL = 'http://localhost:5055/addAdmin';
+    fetch(serverURL, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(adminData)
+    })
+    .then(res => {
+      console.log('server side respose:', res);
+    });
+  }
     return (
         <section>
             <div className="container">
@@ -16,8 +32,7 @@ const MakeAdmin = () => {
                     <div className="col-md-10 mt-5">
                     <h4 className="brand-txt mt-5">Make Admin</h4>
                     <form className="makeadmin-form"onSubmit={handleSubmit(onSubmit)}>
-                        <input name='email' {...register("email", { required: true })} placeholder="Enter E-mail"/>
-                        {errors.serviceTitle && <p className="error">Title is required</p>}<br />
+                        <input name='email' id='email' {...register("email", { required: true })} placeholder="Enter E-mail"/>
                         <input type="submit" className="fw-bold text-white text-uppercase" />
                     </form> 
                     </div>

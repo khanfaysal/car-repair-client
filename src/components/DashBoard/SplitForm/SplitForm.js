@@ -112,7 +112,7 @@ const SplitForm = ({paymentSuccess, setPaymentSuccess, paymentError, setPaymentE
                     Pay
                 </button>&nbsp;
             </div>
-            <p>Your Service Charge Will be {} </p>
+            
         </form>
     );
 };

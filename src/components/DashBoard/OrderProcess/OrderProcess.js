@@ -33,7 +33,7 @@ const OrderProcess = ({userOrder, setUserOrder}) => {
         const newOrder = {...userOrder}
         newOrder.name = logInUser.displayName || data.name;
         newOrder.email = logInUser.email || data.email;
-        newOrder.description = userOrder.orderName || data.serviceTitle;
+        newOrder.orderName = userOrder.orderName || data.serviceTitle;
         await setUserOrder(newOrder);
     }
     return (
@@ -71,8 +71,9 @@ const OrderProcess = ({userOrder, setUserOrder}) => {
                                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />&nbsp;&nbsp;
                                     <label class="form-check-label" for="flexRadioDefault1">
                                     <img className="img-fluid" style={{width:"30px", height:"30px"}} src={PayPal} alt=""/>
-                                    </label>
+                                    </label> &nbsp; &nbsp;
                                 </div>
+                                <p>Your Service Charge Will be ${userOrder.price}</p>
                             </div>
                             <PaymentProcess></PaymentProcess>
                         </div>
