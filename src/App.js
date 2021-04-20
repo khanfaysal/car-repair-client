@@ -27,7 +27,7 @@ function App() {
 
     useEffect(() => {
         const rawEmail = logInUser.email;
-        fetch('http://localhost:5055/admin?email='+rawEmail)
+        fetch('https://thawing-sea-95605.herokuapp.com/admin?email='+rawEmail)
         .then(res => res.json())
         .then(data => setAdminData(data))
     }, [logInUser.email]);

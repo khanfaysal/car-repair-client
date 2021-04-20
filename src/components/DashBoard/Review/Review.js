@@ -19,7 +19,7 @@ const Review = () => {
             // price:data.price,
             // textArea: data.textArea
         };
-        const url = `http://localhost:5055/userFeedbackInfo`;
+        const url = `https://thawing-sea-95605.herokuapp.com/userFeedbackInfo`;
         console.log(userFeedbackInfo);
         fetch(url,{
             method: 'POST',

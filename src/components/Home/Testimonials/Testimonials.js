@@ -4,7 +4,7 @@ import TestimonialDetails from '../TestimonialDetails/TestimonialDetails';
 const AllServices = () => {
     const [feedbacks, setFeedbacks] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5055/userfeedback')
+        fetch('https://thawing-sea-95605.herokuapp.com/userfeedback')
         .then(res => res.json())
         .then(data =>setFeedbacks(data))
     },[])

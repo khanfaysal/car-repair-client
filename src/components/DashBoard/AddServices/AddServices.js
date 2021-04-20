@@ -14,7 +14,7 @@ const AddServices = () => {
             price:data.price,
             textArea: data.textArea
         };
-        const url = `http://localhost:5055/addServiceInfo`;
+        const url = `https://thawing-sea-95605.herokuapp.com/addServiceInfo`;
         console.log(servicebookData);
         fetch(url,{
             method: 'POST',

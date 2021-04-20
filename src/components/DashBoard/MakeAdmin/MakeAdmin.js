@@ -10,7 +10,7 @@ const MakeAdmin = () => {
     const adminData = {
       adminEmail: data.email
     }
-    const serverURL = 'http://localhost:5055/addAdmin';
+    const serverURL = 'https://thawing-sea-95605.herokuapp.com/addAdmin';
     fetch(serverURL, {
       method: 'POST',
       headers: {

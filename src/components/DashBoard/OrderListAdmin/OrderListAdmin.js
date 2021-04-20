@@ -4,7 +4,7 @@ import SideBar from "../SideBar/SideBar";
 const ManageService = () => {
   const [orderServices, setOrderServices] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5055/orders")
+    fetch("https://thawing-sea-95605.herokuapp.com/orders")
       .then((res) => res.json())
       .then((data) => setOrderServices(data));
   }, [setOrderServices, orderServices]);
@@ -12,7 +12,7 @@ const ManageService = () => {
   const updateService = (id, status) => {
     console.log(id, status);
     const order = { id, status };
-    fetch("http://localhost:5055/updateOrder/" + id, {
+    fetch("https://thawing-sea-95605.herokuapp.com/updateOrder/" + id, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -26,7 +26,7 @@ const ManageService = () => {
   const handleStatusChange = async (e) => {
     console.log(e.target.id, e.target.value);
     // Load Product
-    await fetch(`http://localhost:5055/order/${e.target.id}`)
+    await fetch(`https://thawing-sea-95605.herokuapp.com/order/${e.target.id}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

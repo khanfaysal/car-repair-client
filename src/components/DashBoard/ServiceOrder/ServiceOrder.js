@@ -8,7 +8,7 @@ const ServiceOrder = () => {
     const [logInUser, setLogInUser] = useContext(UserContext);
     const [specificOrder, setSpecificOrder] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5055/specificOrders?email='+logInUser.email)
+        fetch('https://thawing-sea-95605.herokuapp.com/specificOrders?email='+logInUser.email)
         .then(res => res.json())
         .then(data =>setSpecificOrder(data))
     },[logInUser.email])

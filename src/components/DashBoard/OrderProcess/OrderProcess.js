@@ -18,7 +18,7 @@ const OrderProcess = ({userOrder, setUserOrder}) => {
         console.log(data);
         console.log(userOrder);
 
-        fetch("http://localhost:5055/addOrder",{
+        fetch("https://thawing-sea-95605.herokuapp.com/addOrder",{
             method:"POST",
             headers:{"content-type":"application/json"},
             body:JSON.stringify(userOrder)

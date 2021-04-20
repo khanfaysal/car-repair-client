@@ -4,7 +4,7 @@ import ServicesDetails from '../ServicesDetails/ServicesDetails';
 const AllServices = ({userOrder, setUserOrder}) => {
     const [services, setServices] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5055/servicebook')
+        fetch('https://thawing-sea-95605.herokuapp.com/servicebook')
         .then(res => res.json())
         .then(data =>setServices(data))
     },[])
