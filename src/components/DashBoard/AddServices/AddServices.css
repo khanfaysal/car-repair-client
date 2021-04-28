@@ -32,3 +32,8 @@ input[type=submit] {
 .error{
     color: #d81324;
 }
+/* 
+.sideResponsive{
+    width: calc(100%-250px);
+    margin-left: auto;
+} */

@@ -5,6 +5,11 @@
   list-style-type: none;
   text-decoration: none;
 } */
+body{
+  overflow-x: hidden;
+  /* width: calc(100%-250px);
+  margin-left: auto; */
+}
 
 .brand-btn{
   font-family: 'Lato', sans-serif;

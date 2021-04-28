@@ -79,9 +79,9 @@ function App() {
           )
         }
 
-        <Route path="/order">
+        <PrivateRoute path="/order">
           <OrderProcess userOrder={userOrder} setUserOrder={setUserOrder}></OrderProcess>
-        </Route>
+        </PrivateRoute>
 
         <Route path="/customerorder">
           <ServiceOrder></ServiceOrder>

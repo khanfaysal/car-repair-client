@@ -50,6 +50,7 @@ const SplitForm = ({paymentSuccess, setPaymentSuccess, paymentError, setPaymentE
     payload.paymentMethod && setPaymentSuccess(payload.paymentMethod.id);
     payload.paymentMethod && setPaymentError(null);
     console.log("[PaymentMethod]", payload);
+    // console.log("[PaymentMethod]", payload.paymentMethod.exp_year);
   };
     return (
         <form onSubmit={handleSubmit} className="row">
