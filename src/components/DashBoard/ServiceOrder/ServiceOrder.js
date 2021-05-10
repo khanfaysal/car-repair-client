@@ -22,7 +22,7 @@ const ServiceOrder = () => {
                 </div>
                 <div className="col-md-10">
                     <h4 className="brand-txt mt-5">Order List</h4>
-                    <div class="card-group">
+                    <div class="row">
                     {
                         specificOrder.map(order =><ServiceOrderDetails order={order} key={order._id}></ServiceOrderDetails>)
                     }

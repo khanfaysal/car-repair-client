@@ -23,7 +23,7 @@
 }
 .sidebar-menu a{
     display:block;
-    color: #fff;
+    color: #d81324;
     font-size:1rem;
     padding-left: 1rem;
     text-decoration: none;
@@ -33,19 +33,22 @@
     padding-right: 1rem;
 
 }
-.sidebar-menu a.active{
+/* .sidebar-menu a.active{
     background:#fff;
     padding-top: 1rem;
     padding-bottom: 1rem;
     color: #d81324;
     border-radius: 25px 0px 0px 25px;
     font-weight: bold;
-}
+} */
 .fa-home::after{
     content: "\2192";
     padding-left: 10px;
 }
-
+/* media queries */
+@media (min-width: 576px) {
+    
+ }
 
 
 
