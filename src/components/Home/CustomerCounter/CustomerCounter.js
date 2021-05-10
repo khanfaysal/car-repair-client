@@ -7,7 +7,7 @@ const CustomerCounter = () => {
         <section className="customer-counter section-margin-top container">
             <div className="row ">
                 <div className="col-md-6">
-                    <img src={CarEngine} alt=""/>
+                    <img className="img-fluid" src={CarEngine} alt=""/>
                 </div>
                 <div className="col-md-6">
                     <div className="counter-content">
