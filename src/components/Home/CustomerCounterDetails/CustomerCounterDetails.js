@@ -9,8 +9,8 @@ const CustomerCounterDetails = props => {
             <h1 className="text-danger fw-bold">
                 <CountUp
                     start={0}
-                    duration={12}
-                    delay={3}
+                    duration={14}
+                    delay={2}
                     end={number}
                 />
             </h1>

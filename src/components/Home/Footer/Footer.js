@@ -35,7 +35,7 @@ const Footer = () => {
                         </ul>
                         <div>
                             <h6 className="brand-txt">Call now</h6>
-                            <button className="btn brand-btn">+2025550295</button>
+                            <button className="brand-btn">+2025550295</button>
                         </div>
                     </FooterColumn>
                 </div>
