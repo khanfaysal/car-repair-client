@@ -8,7 +8,7 @@ const HeaderMain = () => {
             <div className="col-md-5 offset-md-1 mt-5">
                 <h1 className="">car repair services & <br /> auto machine</h1>
                 <p className="text-dark py-4">If your engine is sick or tired we have the equipment to check,<br /> diagnose and efficiently fix any problem you may have.</p>
-                <button className="brand-btn">get service</button>
+                <a href="#all-service"><button className="brand-btn">get service</button></a>
             </div>
             <div className="col-md-6 mt-5">
                 <img src={BannerImage} alt="" className="img-fluid"/>

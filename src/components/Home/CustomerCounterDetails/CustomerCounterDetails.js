@@ -8,7 +8,7 @@ const CustomerCounterDetails = props => {
             <div className="happy-customer ">
             <h1 className="text-danger fw-bold">
                 <CountUp
-                    start={0}
+                    start={1}
                     duration={14}
                     delay={2}
                     end={number}

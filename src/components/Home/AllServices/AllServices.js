@@ -10,7 +10,7 @@ const AllServices = ({userOrder, setUserOrder}) => {
     },[])
 
     return (
-        <section>
+        <section id="all-service">
         <div className="container">  
            <div className="mb-5">
                 <div className="col-md-12 text-center">

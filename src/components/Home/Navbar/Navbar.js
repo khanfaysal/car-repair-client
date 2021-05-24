@@ -3,6 +3,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../../App';
 import Logo from '../../../images/logo2.png';
+import './Navbar.css';
 
 const Navbar = () => {
     const [logInUser, setLogInUser] = useContext(UserContext);
@@ -32,9 +33,6 @@ const Navbar = () => {
                 </li>
                 <li class="nav-item">
                     <Link class="nav-link ms-4" to="/dashboard">Dashboard</Link>
-                </li>
-                <li class="nav-item"> 
-                    <Link class="nav-link ms-5 " to="/login"><button type="button" class="brand-btn">Login</button></Link>
                 </li>
                 <li>
                     {logInUser.displayName ? (
