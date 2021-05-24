@@ -41,6 +41,7 @@ const GoogleAuthentication = () => {
           console.log(errorCode , errorMessage , email);
         });
     }
+    
     const buttonStyle = {
         color: 'white',
         backgroundColor: '#0b2154',

@@ -1,10 +1,21 @@
-import React, { useContext } from "react";
+import React, { useContext , useState } from "react";
 import SideBar from "./SideBar/SideBar";
 import "./DashBoard.css";
+import firebase from "firebase/app";
+import "firebase/auth";
 import { UserContext } from "../../App";
 
 const DashBoard = () => {
-  const [logInUser, setLogInUser] = useContext(UserContext);
+    const [logInUser, setLogInUser] = useContext(UserContext);
+    const handleClickSignOut = () =>{
+        firebase.auth().signOut().then(() => {
+            setLogInUser({});
+            console.log(setLogInUser);
+          }).catch((error) => {
+            // An error happened.
+          });
+    }
+   
   return (
     <section>
       <div className="container-fluid">
@@ -19,7 +30,7 @@ const DashBoard = () => {
               <img src={logInUser.photoURL} class="card-img-top img-fluid rounded-circle" alt="..." />
               <div class="card-body">
                 <h5 class="card-title fw-bold">{logInUser.displayName }</h5>
-                 <button className="brand-btn">Sign Out</button>
+                 <button onClick={handleClickSignOut}  className="brand-btn">Sign Out</button>
               </div>
             </div>
             </div>
