@@ -55,7 +55,7 @@ const GoogleAuthentication = () => {
       }
     return (
      <div className="google-btn text-center">
-        <button style ={buttonStyle} onClick = {handleGoogleSignIn}><FontAwesomeIcon icon={faGoogle} color="#eb4d4b"/>&nbsp;&nbsp;Sign in Using Google</button>
+        <button style ={buttonStyle} onClick = {handleGoogleSignIn}><FontAwesomeIcon icon={faGoogle} color="#eb4d4b"/>&nbsp;&nbsp;Sign In</button>
     </div>
     );
 };

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faListUl,faPlus,faUserCog,faThLarge,faCartPlus,faCommentDots, faTools,faHome} from '@fortawesome/free-solid-svg-icons';
+import { faListUl,faPlus,faUserCog,faThLarge,faCartPlus,faCommentDots, faTools,faHome, faUserCircle} from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import './SideBar.css';
 import { UserContext } from '../../../App';
@@ -32,6 +32,9 @@ const SideBar = () => {
                     </div>
                     <div className="sidebar-menu">
                         <ul>
+                            <li>
+                                <Link to ="/dashboard"><FontAwesomeIcon icon={faUserCircle} className="fa fa-user-profile" color="#d81324"/>&nbsp;&nbsp;<span>Profile</span></Link>
+                            </li>
                             {
                                 adminData && (
                                     <>

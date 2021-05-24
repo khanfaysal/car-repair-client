@@ -8,7 +8,7 @@ const TestimonialDetails = ({feedback}) => {
            <div class="card shadow p-3 mb-5 bg-body rounded"> 
                <div className="d-flex mt-3 px-2">
                    <div>
-                       <img className="img-fluid  p-2" src={feedback.imageURL} class="card-img-top" alt=" " />
+                       <img className="img-fluid avatar rounded-circle w-25 border border-danger p-2" src={feedback.imageURL} class="card-img-top " alt=" " />
                    </div>
                    <div className="ms-3 pt-4">
                        <h5 class="card-text ">{feedback.username}</h5>

@@ -39,7 +39,7 @@ function App() {
           <Home userOrder={userOrder} setUserOrder={setUserOrder}></Home>
         </Route>
 
-        <Route exact path="/home">
+        <Route path="/home">
           <Home userOrder={userOrder} setUserOrder={setUserOrder}></Home>
         </Route>
 

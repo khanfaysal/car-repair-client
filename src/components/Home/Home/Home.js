@@ -13,7 +13,6 @@ const Home = ({userOrder, setUserOrder}) => {
             <Header></Header>
             <CustomerCounter></CustomerCounter>
             <AllServices userOrder={userOrder} setUserOrder={setUserOrder}></AllServices>
-            {/* <ServicesDetails></ServicesDetails> */}
             <Testimonials></Testimonials>
             <CustomerForm></CustomerForm>
             <Footer></Footer>
