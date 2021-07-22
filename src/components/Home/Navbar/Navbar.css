@@ -1,8 +1,16 @@
+
+.login-text-color{
+    margin: 0 15px;
+    color: #0b2154;
+    font-size:16px;
+    font-weight:700;
+    font-family: 'Lato', sans-serif; 
+}
 .navbar-nav .nav-item .nav-link{
     margin: 0 15px;
     color: #0b2154;
     font-size:16px;
     font-weight:700;
-    font-family: 'Lato', sans-serif;
-    
+    font-family: 'Lato', sans-serif;   
 }
+

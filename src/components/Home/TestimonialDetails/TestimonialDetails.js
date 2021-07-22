@@ -2,7 +2,7 @@ import React from 'react';
 
 const TestimonialDetails = ({feedback}) => {
     return (
-        <div className="col-md-4">
+        <div className="col-md-4 ">
         <div className="user-section">
         <div class="card-group">
            <div class="card shadow p-3 mb-5 bg-body rounded"> 

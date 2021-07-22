@@ -6,7 +6,7 @@ const CustomerForm = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => console.log(data);
     return (
-        <section className="customer-form section-margin-top">
+        <section className="customer-form section-margin">
          <div className="container">
              <div className="row">
                  <div className="col-md-12 text-center">

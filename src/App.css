@@ -14,13 +14,14 @@ body{
 .brand-btn{
   font-family: 'Lato', sans-serif;
   font-weight: 400;
-  border-color: transparent;
   text-transform: capitalize;
   font-weight:600;
   color: #ffffff;
   background-color: #0b2154;
   width: 150px;
   height: 40px;
+  border-color: transparent;
+  border-radius: 25px;
 
 }
 .brand-txt{
@@ -38,7 +39,6 @@ body{
   color: #0b2154;
   text-transform: capitalize;
 }
-.section-margin-top{
-  margin-top:150px;
-  margin-bottom: 150px;
+.section-margin{
+  margin:150px 0px 150px 0px;
 }

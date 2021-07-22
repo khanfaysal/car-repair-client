@@ -17,7 +17,7 @@ const CustomerCounter = () => {
         }
     ]
     return (
-        <section className="customer-counter section-margin-top container">
+        <section className="customer-counter container">
             <div className="row ">
                 <div className="col-md-6">
                     <img className="img-fluid" src={CarEngine} alt=""/>

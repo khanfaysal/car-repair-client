@@ -45,7 +45,7 @@ const GoogleAuthentication = () => {
     const buttonStyle = {
         color: 'white',
         backgroundColor: '#0b2154',
-        borderRadius: 5,
+        borderRadius: 25,
         border: 'none',
         margin: '25px 6px',
         padding: '10px',

@@ -10,7 +10,7 @@ const AllServices = () => {
     },[])
 
     return (
-        <section className ="section-margin-top">
+        <section className ="testimonial section-margin bg-light">
         <div className="container ">  
            <div className="mb-5">
                 <div className="col-md-12 text-center">

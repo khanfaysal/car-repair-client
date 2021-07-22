@@ -26,6 +26,7 @@
 input[type=submit] {
     background-color: red;
     width: 150px;
+    border-radius: 25px;
 }
 .error{
     color: #d81324;

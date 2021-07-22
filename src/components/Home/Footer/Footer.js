@@ -34,15 +34,14 @@ const Footer = () => {
                             <li className="list-inline-item"><a href="//instagram.com"><FontAwesomeIcon className="icon" icon={faInstagram} /></a></li>
                         </ul>
                         <div>
-                            <h6 className="brand-txt">Call now</h6>
-                            <button className="brand-btn">+8801679599705</button>
+                            <button className="address-btn">+8801679599705</button>
                         </div>
                     </FooterColumn>
                 </div>
-                <div className="copyRight text-center">
-                    <p>Copyright <span>&#169;</span> {(new Date()).getFullYear()} All Rights Reserved Faysal Khan</p>
+              </div>
+            <div className="copyRight text-center bg-danger py-1">
+                    <p className="text-white">Copyright <span>&#169;</span> {(new Date()).getFullYear()} All Rights Reserved Faysal Khan</p>
                 </div>
-            </div>
         </footer>
         
     );
