@@ -6,13 +6,13 @@ import SideBar from "../SideBar/SideBar";
 const ManageService = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch("https://thawing-sea-95605.herokuapp.com/servicebook")
+    fetch("https://car-repair-server-kappa.vercel.app/servicebook")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, [services]);
   const specificDeleteBook = (id) => {
     console.log(id);
-    fetch("https://thawing-sea-95605.herokuapp.com/deleteService/" + id, {
+    fetch("https://car-repair-server-kappa.vercel.app/deleteService/" + id, {
       method: "DELETE",
     })
       .then((res) => res.json())

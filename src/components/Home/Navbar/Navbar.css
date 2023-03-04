@@ -1,4 +1,10 @@
 
+.navbar {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+}
 .login-text-color{
     margin: 0 15px;
     color: #0b2154;

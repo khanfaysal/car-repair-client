@@ -22,7 +22,8 @@ const SideBar = () => {
 
   useEffect(() => {
     const rawEmail = logInUser.email;
-    fetch("https://thawing-sea-95605.herokuapp.com/admin?email=" + rawEmail)
+    if (!rawEmail) return;
+    fetch("https://car-repair-server-kappa.vercel.app/admin?email=" + rawEmail)
       .then((res) => res.json())
       .then((data) => setAdminData(data));
   }, [logInUser.email]);

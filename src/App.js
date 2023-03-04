@@ -23,83 +23,84 @@ function App() {
   const [logInUser, setLogInUser] = useState({});
   const [userOrder, setUserOrder] = useState({});
 
-    const [adminData, setAdminData] = useState(null);
+  const [adminData, setAdminData] = useState(null);
 
-    useEffect(() => {
-        const rawEmail = logInUser.email;
-        fetch('https://thawing-sea-95605.herokuapp.com/admin?email='+rawEmail)
-        .then(res => res.json())
-        .then(data => setAdminData(data))
-    }, [logInUser.email]);
+  useEffect(() => {
+    const rawEmail = logInUser.email;
+    if (!rawEmail) return;
+    fetch('https://car-repair-server-kappa.vercel.app/admin?email=' + rawEmail)
+      .then(res => res.json())
+      .then(data => setAdminData(data))
+  }, [logInUser.email]);
   return (
-    <UserContext.Provider  value = {[logInUser, setLogInUser]}>
-     <Router>
-      <Switch>
-        <Route exact path="/">
-          <Home userOrder={userOrder} setUserOrder={setUserOrder}></Home>
-        </Route>
+    <UserContext.Provider value={[logInUser, setLogInUser]}>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Home userOrder={userOrder} setUserOrder={setUserOrder}></Home>
+          </Route>
 
-        <Route path="/home">
-          <Home userOrder={userOrder} setUserOrder={setUserOrder}></Home>
-        </Route>
+          <Route path="/home">
+            <Home userOrder={userOrder} setUserOrder={setUserOrder}></Home>
+          </Route>
 
-        <PrivateRoute path="/dashboard">
-          <DashBoard></DashBoard>
-        </PrivateRoute>
+          <PrivateRoute path="/dashboard">
+            <DashBoard></DashBoard>
+          </PrivateRoute>
 
-       {
-         adminData && (
-          <Route path="/addservices">
-           <AddServices></AddServices>
-         </Route>
-         )
-       }
+          {
+            adminData && (
+              <Route path="/addservices">
+                <AddServices></AddServices>
+              </Route>
+            )
+          }
 
-        {
-          adminData && (
-            <Route path="/orderlist">
-              <OrderListAdmin></OrderListAdmin>
-            </Route>
-          )
-        }
+          {
+            adminData && (
+              <Route path="/orderlist">
+                <OrderListAdmin></OrderListAdmin>
+              </Route>
+            )
+          }
 
-        {
-          adminData && (
-            <Route path="/makeadmin">
-              <MakeAdmin></MakeAdmin>
-            </Route>
-          )
-        }
+          {
+            adminData && (
+              <Route path="/makeadmin">
+                <MakeAdmin></MakeAdmin>
+              </Route>
+            )
+          }
 
-        {
-          adminData && (
-            <Route path="/manageservice">
-              <ManageService></ManageService>
-           </Route>
-          )
-        }
+          {
+            adminData && (
+              <Route path="/manageservice">
+                <ManageService></ManageService>
+              </Route>
+            )
+          }
 
-        <PrivateRoute path="/order">
-          <OrderProcess userOrder={userOrder} setUserOrder={setUserOrder}></OrderProcess>
-        </PrivateRoute>
+          <PrivateRoute path="/order">
+            <OrderProcess userOrder={userOrder} setUserOrder={setUserOrder}></OrderProcess>
+          </PrivateRoute>
 
-        <Route path="/customerorder">
-          <ServiceOrder></ServiceOrder>
-        </Route>
+          <Route path="/customerorder">
+            <ServiceOrder></ServiceOrder>
+          </Route>
 
-        <Route path="/review">
-          <Review></Review>
-        </Route>
+          <Route path="/review">
+            <Review></Review>
+          </Route>
 
-        <Route path="/login">
-          <Login></Login>
-        </Route>
-        
-        <Route path="*">
-          <Login></Login>
-        </Route> 
-      </Switch>
-    </Router> 
+          <Route path="/login">
+            <Login></Login>
+          </Route>
+
+          <Route path="*">
+            <Login></Login>
+          </Route>
+        </Switch>
+      </Router>
     </UserContext.Provider>
   );
 }

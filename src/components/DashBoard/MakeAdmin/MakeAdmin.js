@@ -10,7 +10,7 @@ const MakeAdmin = () => {
     const adminData = {
       adminEmail: data.email,
     };
-    const serverURL = "https://thawing-sea-95605.herokuapp.com/addAdmin";
+    const serverURL = "https://car-repair-server-kappa.vercel.app/addAdmin";
     fetch(serverURL, {
       method: "POST",
       headers: {
